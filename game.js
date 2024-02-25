@@ -61,14 +61,21 @@ function animatePress(currentColour){
  },100);
 }
 
-var flag=true;
-$(document).keypress(function(){
-    if(flag){
-        flag=false
-    $("#level-title").text("Level "+level);
+var flag = true;
+
+// Add event listeners for both touchstart and keypress events
+$(document).on("touchstart keypress", function(event) {
+  if (flag) {
+    flag = false;
+    $("#level-title").text("Level " + level);
     nextSequence();
-    }
-})
+  }
+
+  // Prevent default touch behavior if needed (e.g., to avoid scrolling)
+  if (event.type === "touchstart") {
+    event.preventDefault();
+  }
+});
 
 function checkAnswer(currentLevel){
     
