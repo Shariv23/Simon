@@ -85,17 +85,15 @@ else{
     $("body").addClass("game-over");
     setTimeout(function(){
         $("body").removeClass("game-over")
-     },1000);
+     },3000);
      startOver();
 }
 }
+}
 function startOver(){
-    level=0;
-    gamePattern=[]
-    userClickedPattern=[]
     setTimeout(function(){
-        $("#level-title").text("Game Over, Press Any Key to Restart"); 
+        $("#level-title").text("Game Over,Refresh To Restart🔃"); 
      },3000);
     
 }
-}
+
